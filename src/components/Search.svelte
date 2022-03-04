@@ -1,6 +1,5 @@
 <script>
   // your script goes here
-  import ItemStore from "../stores/ItemStore";
   export let search = "";
   export let key;
   let keys = {
