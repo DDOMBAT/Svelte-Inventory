@@ -26,9 +26,14 @@
     } else {
       error.question = "";
     }
+    const duplicates = $ItemStore.filter((e) => e.serial === fields.serial);
+    const length = duplicates.filter((e) => e.serial !== editId).length;
     if (fields.serial.trim().length < 1) {
       valid = false;
       error.serial = "Serial Number must not be blank";
+    } else if (duplicates && length >= 1) {
+      error.serial = "Duplicated serial number";
+      valid = false;
     } else {
       error.serial = "";
     }
@@ -60,7 +65,7 @@
 <!-- markup (zero or more items) goes here -->
 <form on:submit|preventDefault={handleSubmit}>
   <div class="form-field">
-    <label for="category">Item Category</label>
+    <label for="category"><strong>Item Category:</strong></label>
     <select id="category" bind:value={fields.category}>
       {#each $CategoryStore as category (category)}
         {#if category !== "All"}
@@ -73,12 +78,12 @@
     <div class="error">{error.category}</div>
   </div>
   <div class="form-field">
-    <label for="serial">Serial Number</label>
+    <label for="serial">Serial Number:</label>
     <input type="text" id="serial" bind:value={fields.serial} />
     <div class="error">{error.serial}</div>
   </div>
   <div class="form-field">
-    <label for="store">Store Number</label>
+    <label for="store">Store Number:</label>
     <input type="text" id="store" bind:value={fields.store} />
     <div class="error">{error.store}</div>
   </div>
@@ -89,14 +94,11 @@
   /* your styles go here */
   form {
     width: 400px;
-    margin: 0 auto;
-    text-align: center;
   }
   .form-field {
     margin: 18px auto;
   }
   input {
-    width: 100%;
     border-radius: 6px;
   }
   label {

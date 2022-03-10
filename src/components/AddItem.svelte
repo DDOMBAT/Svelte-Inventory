@@ -22,9 +22,13 @@
     } else {
       error.question = "";
     }
+    let duplicates = $ItemStore.filter((e) => e.serial === fields.serial);
     if (fields.serial.trim().length < 1) {
       valid = false;
       error.serial = "Serial Number must not be blank";
+    } else if (duplicates.length >= 1) {
+      error.serial = "Duplicated serial number";
+      valid = false;
     } else {
       error.serial = "";
     }
@@ -39,7 +43,7 @@
       ItemStore.update((currentItems) => {
         return [item, ...currentItems];
       });
-      fields.category = "";
+      fields.category = "Terminal";
       fields.store = "";
       fields.serial = "";
     }
