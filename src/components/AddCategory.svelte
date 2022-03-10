@@ -7,9 +7,15 @@
   let valid = false;
   const handleSubmit = () => {
     valid = true;
+    let duplicates = $CategoryStore.filter(
+      (category) => category.toLowerCase() === input.toLowerCase()
+    );
     if (input.trim().length < 1) {
       valid = false;
       error = "Input cannot be empty";
+    } else if (duplicates.length >= 1) {
+      error = `Duplicate categories with ${duplicates}`;
+      valid = false;
     } else {
       error = "";
     }
