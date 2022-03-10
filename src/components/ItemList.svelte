@@ -8,7 +8,7 @@
   let selected = "All";
   let search = "";
   let key = "category";
-  let filteredItems = $ItemStore;
+  $: filteredItems = $ItemStore;
   // TODO make filteredItems depend on item store
   $: {
     if (selected === "All") {
