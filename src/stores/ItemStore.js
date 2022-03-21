@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-
+// TODO place add and edit functions in here
 const ItemStore = writable([
   {
     category: "Terminal",
