@@ -1,5 +1,4 @@
 <script>
-  // your script goes here
   import CategoryStore from "../stores/CategoryStore";
   import Button from "../shared/Button.svelte";
   let input = "";
