@@ -24,7 +24,7 @@
       valid = false;
       error.category = "A category must be selected";
     } else {
-      error.question = "";
+      error.category = "";
     }
     const duplicates = $ItemStore.filter((e) => e.serial === fields.serial);
     const length = duplicates.filter((e) => e.serial !== editId).length;

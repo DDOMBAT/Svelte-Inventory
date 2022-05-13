@@ -20,7 +20,7 @@
       valid = false;
       error.category = "A category must be selected";
     } else {
-      error.question = "";
+      error.category = "";
     }
     let duplicates = $ItemStore.filter((e) => e.serial === fields.serial);
     if (fields.serial.trim().length < 1) {
