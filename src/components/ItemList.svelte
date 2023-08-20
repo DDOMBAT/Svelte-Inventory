@@ -23,7 +23,7 @@
 </script>
 
 <!-- markup (zero or more items) goes here -->
-<div>
+<div id="inventory">
   <h1>Inventory <ClearInventory /></h1>
   <SelectCategory bind:selected />
   <Search bind:search bind:key />
