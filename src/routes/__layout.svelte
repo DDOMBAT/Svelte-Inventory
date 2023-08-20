@@ -7,8 +7,8 @@
 <header>
   <nav>
     <div class="links">
-      <a href="/">Inventory</a>
-      <a href="items">Items</a>
+      <a href="/">Overview</a>
+      <a href="items">Tracks</a>
       <a href="/categories">Categories</a>
     </div>
   </nav>

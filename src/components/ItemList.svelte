@@ -23,7 +23,7 @@
 </script>
 
 <!-- markup (zero or more items) goes here -->
-<div id="inventory">
+<div id="tracks">
   <h1>Inventory <ClearInventory /></h1>
   <SelectCategory bind:selected />
   <Search bind:search bind:key />
@@ -40,7 +40,7 @@
 
 <style>
 
- #inventory {
+ #tracks {
     display: block;
     margin-left: 100px;
     margin-right: auto;
