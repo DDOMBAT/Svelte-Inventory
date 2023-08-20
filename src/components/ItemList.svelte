@@ -40,6 +40,10 @@
 
 <style>
 
-
+ #inventory {
+    display: block;
+    margin-left: 100px;
+    margin-right: auto;
+  }
   
 </style>
